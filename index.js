@@ -14,16 +14,18 @@ tlacitko.addEventListener("click", () => {
 
 //navigace
 document.addEventListener("DOMContentLoaded", function () {
-    const navLink = document.getElementById("nav-link");
-    const navText = document.getElementById("nav-text");
-    let firstClick = false;
+  const navLink = document.getElementById("nav-link");
+  const navText = document.getElementById("nav-text");
+  let firstClick = false;
+  const navUrl = "geo:50.3759308,15.5746725"; // Správný odkaz na navigaci
 
-    navLink.addEventListener("click", function (event) {
-        if (!firstClick) {
-            event.preventDefault(); // Zabrání přesměrování
-            navText.style.display = "inline"; // Zobrazí text
-            firstClick = true;
-        }
-        // Při druhém kliknutí se odkaz normálně otevře
-    });
+  navLink.addEventListener("click", function (event) {
+    if (!firstClick) {
+      event.preventDefault(); // Zabrání okamžitému přesměrování
+      navText.style.display = "inline"; // Zobrazí text
+      firstClick = true;
+    } else {
+      window.location.href = navUrl; // Otevře navigaci
+    }
+  });
 });
