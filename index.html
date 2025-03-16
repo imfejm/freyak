@@ -3,6 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Genos:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
     <title>freyak psi salon</title>
     <link rel="stylesheet" href="index.css" />
   </head>
@@ -34,7 +40,7 @@
             <a class="nav-link" href="">ceník</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" data-key="contact" href="#contact">kontakt</a>
+            <a class="nav-link" href="#contact">kontakt</a>
           </li>
         </ul>
       </div>
@@ -54,21 +60,23 @@
       <img src="img/background.jpg" alt="dog relax" class="cucu" />
       <button>a href="#order">objednat se</button>
     </div>
-    <script src="index.js"></script>
+
     <div class="intro" id="sluzby">
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis id
-        sunt amet provident qui maiores hic ducimus nihil recusandae, quae
-        consequuntur, quasi facere ut ratione sequi explicabo iure! Similique,
-        quis?
+        Poskytuji kompletní úpravu psů různých plemen a velikostí. K stříhání,
+        popř. trimování, patří samozřejmě i koupání, fénování, rozčesávání.
+        Neméně důležitou součástí je i péče o drápy, žlázky a uši. Profesionální
+        služby pro zdraví a komfort vašeho psa.
       </p>
     </div>
     <div class="interval" id="order"></div>
-    <div class="contact">
-      <h4>
-        Napište mi, kdy byste chtěli s pejskem přijít, ozvu se Vám, zda je
-        termín volný:
-      </h4>
+    <div class="order">
+      <div class="all">
+        <h4>
+          Napište mi, kdy byste chtěli s pejskem přijít, ozvu se Vám, zda je
+          termín volný:
+        </h4>
+      </div>
 
       <form class="forms" id="contact-form">
         <label for="name" data-key="name">vaše jméno:</label>
@@ -101,8 +109,41 @@
 
         <button type="submit" data-key="send">odeslat</button>
       </form>
-      <h4>Nebo mi rovnou zavolejte:</h4>
+      <h4 class="call">Nebo mi rovnou zavolejte:</h4>
       <a href="tel: +420739414743" class="tel">739414743</a>
+      <h4 class="mail">Můžete použít e-mailovou adresu:</h4>
+      <p>info@freyak.cz</p>
     </div>
+    <div class="interval2" id="contact"></div>
+    <div class="salon">
+      <div class="adresa">
+        <p>Plně vybavený salon najdete na adrese:</p>
+        <p>
+          <strong>Holovousy 53</strong>, od Hořic v Podkrkonoší přibližně 5 km
+          daleko. Vchod do salonu je z pravé strany domu, snadno ho najdete
+          podle navigační cedule. Pokud byste měli obtíže s parkováním,
+          centrální parkoviště je pouhých 200 metrů na návsi u Obecního úřadu.
+        </p>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2544.5198183480056!2d15.573017725719572!3d50.37550764275816!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470e9c03c572b11b%3A0xb09560d4040a3d9!2sHolovousy%2053%2C%20508%2001%20Holovousy!5e0!3m2!1scs!2scz!4v1742166749305!5m2!1scs!2scz"
+          width="400"
+          height="200"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+        <div class="see">
+          <p>Těším se na Vás a Vaše psí společníky!</p>
+          <p><strong>Jana Kadečková</strong></p>
+          <p>IČO: 88798712</p>
+          <p>adresa: Holovousy 53, 508 01 Hořice v Podkrkonoší</p>
+          <p>e-mail: info@freyak.cz</p>
+          <p>telefon: 739 414 743</p>
+        </div>
+      </div>
+      <footer>© imfejm.cz 2025</footer>
+    </div>
+    <script src="index.js"></script>
   </body>
 </html>

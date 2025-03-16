@@ -16,8 +16,9 @@ body {
   background-color: #f1e8e3;
   overflow-x: hidden; /* Zakáže horizontální posuvník */
   width: 100vw; /* Zabrání roztažení */
-  font-family: Pavanam;
-  font-size: 16px;
+  font-family: Genos;
+  font-weight: 300;
+  font-size: 18px;
 }
 
 .title {
@@ -211,20 +212,24 @@ a.nav-link {
 }
 /*uvod - sluzby*/
 .intro p {
-  margin: 4%;
+  margin: 4% 6% 4% 6%;
   padding: 2%;
+  line-height: 1.6;
+  font-weight: 400;
+
 }
 @media (min-width: 768px) {
   .intro p {
     margin: 2% 10% 2% 10%;
   }
 }
-.interval {
+.interval,
+.interval2 {
   display: block;
   min-height: 60px;
 }
 /*kontaktni formular*/
-.contact {
+.order {
   display: flex;
   flex-direction: column;
   background-color: #9e9762;
@@ -232,7 +237,7 @@ a.nav-link {
   justify-content: center;
   color: #442f23;
 }
-.contact h4 {
+.order h4 {
   margin: 6%;
   padding: 2%;
   color: #442f23;
@@ -246,25 +251,34 @@ a.nav-link {
   color: #442f23;
   font-style: bold;
 }
-@media only screen and (min-width: 800px) {
-    .contact {
-      display: grid;
-      grid-template-areas: "all form";
-      grid-template-columns: 2fr 3fr;
-      gap: 3rem;
-    }
-    .all {
-      grid-area: all;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      height: 100%;
-    }
-    .forms {
-      grid-area: form;
-      margin: 5%;
-    }
+/*@media only screen and (min-width: 800px) {
+  .order {
+    display: grid;
+    grid-template-areas: "all form";
+    grid-template-columns: 2fr 30vw;
+    gap: 3rem;
   }
+  .all {
+    grid-area: all;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    height: 100%;
+    margin: 0;
+  }
+  .forms {
+    grid-area: form;
+    margin: 5%;
+    padding: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .order h4,
+  .tel {
+    margin: 2%;
+  }
+}*/
 
 .forms input,
 textarea {
@@ -285,4 +299,39 @@ textarea {
 .tel {
   font-size: 32px;
   text-decoration: none;
+}
+.call {
+  margin: 2% 6% 0 6%;
+}
+.mail {
+  margin: 2% 6% 0 6%;
+}
+.mail p {
+  margin: 0;
+}
+
+/*salon - adresa*/
+
+.salon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 6% 4% 6%;
+  line-height: 1.6;
+}
+@media only screen and (min-width: 800px) {
+  .salon {
+    width: 45vw;
+  }
+}
+.see{
+    background-color: #c3b2d8;
+    padding: 2%;
+    margin-top: 3%;
+    box-shadow: 3px 10px 10px #c3b2d8;
+}
+
+footer{
+    margin-top: 60px;
 }
