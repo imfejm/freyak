@@ -14,19 +14,32 @@ tlacitko.addEventListener("click", () => {
 
 //navigace
 document.addEventListener("DOMContentLoaded", function () {
-    const navLink = document.getElementById("nav-link");
-    const navText = document.getElementById("nav-text");
-    let firstClick = false;
-    const navUrl = "geo:50.3759308,15.5746725"; // Správný odkaz na navigaci
+  const navLink = document.getElementById("nav-link");
+  const navText = document.getElementById("nav-text");
+  let firstClick = false;
 
-    navLink.addEventListener("click", function (event) {
-        if (!firstClick) {
-            event.preventDefault(); // Zabrání okamžitému přesměrování
-            navText.style.display = "inline"; // Zobrazí text
-            firstClick = true;
-            setTimeout(() => {
-                navLink.href = navUrl; // Nastaví správné href
-            }, 10); // Po krátké prodlevě zajistí správné přesměrování
+  // URL pro různé navigační aplikace
+  const lat = "50.3759308";
+  const lon = "15.5746725";
+  const googleMapsUrl = `https://www.google.com/maps/search/?api=1&query=${lat},${lon}`;
+  const geoUrl = `geo:${lat},${lon}`;
+
+  navLink.addEventListener("click", function (event) {
+    if (!firstClick) {
+      event.preventDefault(); // Zabrání okamžitému přesměrování
+      navText.style.display = "inline"; // Zobrazí text
+      firstClick = true;
+      setTimeout(() => {
+        // Nastavíme odkaz podle zařízení (Google Maps / ostatní navigace)
+        if (
+          navigator.userAgent.includes("Android") ||
+          navigator.userAgent.includes("iPhone")
+        ) {
+          navLink.href = geoUrl; // Otevře nativní navigaci
+        } else {
+          navLink.href = googleMapsUrl; // Otevře Google Maps
         }
-    });
+      }, 10);
+    }
+  });
 });
