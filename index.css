@@ -34,7 +34,7 @@ body {
   padding-top: 0.5%;
 }
 h1 {
-  margin-left: 7%;
+  margin-left: 3%;
 }
 .full {
   /*viditelne menu*/
@@ -137,8 +137,8 @@ a.nav-link {
   color: #2d0408;
 }
 .road {
-    text-decoration: none;
-    font-size: 24px;
+  text-decoration: none;
+  font-size: 24px;
 }
 
 @media only screen and (min-width: 800px) {
@@ -232,10 +232,10 @@ a.nav-link {
   justify-content: center;
   color: #442f23;
 }
-.contact h4{
-   margin: 6%;
-   padding: 2%;
-   color: #442f23;
+.contact h4 {
+  margin: 6%;
+  padding: 2%;
+  color: #442f23;
 }
 .forms {
   width: 50vw;
@@ -246,7 +246,7 @@ a.nav-link {
   color: #442f23;
   font-style: bold;
 }
-/*@media only screen and (min-width: 800px) {
+@media only screen and (min-width: 800px) {
     .contact {
       display: grid;
       grid-template-areas: "all form";
@@ -264,7 +264,7 @@ a.nav-link {
       grid-area: form;
       margin: 5%;
     }
-  }*/
+  }
 
 .forms input,
 textarea {
@@ -279,10 +279,10 @@ textarea {
   width: 4rem;
   aspect-ratio: 1/1;
   border-radius: 50%;
-  margin: 7% 0 7% 0;  
+  margin: 7% 0 7% 0;
 }
 
-.tel{
-    font-size: 32px;
-    text-decoration: none;
+.tel {
+  font-size: 32px;
+  text-decoration: none;
 }
