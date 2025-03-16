@@ -125,7 +125,7 @@ h1 {
   top: 0;
   margin-top: 0;
   padding: 10%;
-  padding-top: 30%;
+  padding-top: 10%;
 }
 ul {
   list-style: none;
@@ -135,6 +135,10 @@ ul {
 }
 a.nav-link {
   color: #2d0408;
+}
+.road {
+    text-decoration: none;
+    font-size: 24px;
 }
 
 @media only screen and (min-width: 800px) {
@@ -214,4 +218,71 @@ a.nav-link {
   .intro p {
     margin: 2% 10% 2% 10%;
   }
+}
+.interval {
+  display: block;
+  min-height: 60px;
+}
+/*kontaktni formular*/
+.contact {
+  display: flex;
+  flex-direction: column;
+  background-color: #9e9762;
+  align-items: center;
+  justify-content: center;
+  color: #442f23;
+}
+.contact h4{
+   margin: 6%;
+   padding: 2%;
+   color: #442f23;
+}
+.forms {
+  width: 50vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #442f23;
+  font-style: bold;
+}
+/*@media only screen and (min-width: 800px) {
+    .contact {
+      display: grid;
+      grid-template-areas: "all form";
+      grid-template-columns: 2fr 3fr;
+      gap: 3rem;
+    }
+    .all {
+      grid-area: all;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 100%;
+    }
+    .forms {
+      grid-area: form;
+      margin: 5%;
+    }
+  }*/
+
+.forms input,
+textarea {
+  width: 80vw;
+  margin: 3%;
+  background-color: #f1e8e3dd;
+  border-style: none;
+  box-shadow: 0 2px 5px #ca9e9b;
+}
+.forms button {
+  background-color: #ca9e9b;
+  width: 4rem;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  margin: 7% 0 7% 0;  
+}
+
+.tel{
+    font-size: 32px;
+    text-decoration: none;
 }

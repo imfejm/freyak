@@ -17,8 +17,15 @@
 
       <div class="navigace small hidden" id="menu">
         <ul class="nav">
+          <a href="geo:50.3759308,15.5746725" class="road" id="nav-link">
+            <img src="img/navigation.png" alt="Navigovat" width="64px" />
+            <span id="nav-text" style="display: none; margin-left: 10px"
+              >do navigace</span
+            >
+          </a>
+
           <li class="nav-item">
-            <a class="nav-link" href="">OBJEDNAT SE</a>
+            <a class="nav-link" href="#order">OBJEDNAT SE</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="">služby</a>
@@ -45,7 +52,7 @@
         class="logo"
       />
       <img src="img/background.jpg" alt="dog relax" class="cucu" />
-      <button> objednat se</button>
+      <button>a href="#order">objednat se</button>
     </div>
     <script src="index.js"></script>
     <div class="intro" id="sluzby">
@@ -55,6 +62,46 @@
         consequuntur, quasi facere ut ratione sequi explicabo iure! Similique,
         quis?
       </p>
+    </div>
+    <div class="interval" id="order"></div>
+    <div class="contact">
+      <h4>
+        Napište mi, kdy byste chtěli s pejskem přijít, ozvu se Vám, zda je
+        termín volný:
+      </h4>
+      <form class="forms" id="contact-form">
+        <label for="name" data-key="name">vaše jméno:</label>
+        <input type="text" id="name" name="name" required />
+
+        <label for="email" data-key="email">termín:</label>
+        <input type="email" id="email" name="reply_to" required />
+
+        <label for="email" data-key="email"
+          >váš e-mail, kam mohu odepsat:</label
+        >
+        <input type="email" id="email" name="reply_to" required />
+
+        <label for="email" data-key="email">vaše telefonní číslo:</label>
+        <input type="email" id="email" name="reply_to" required />
+
+        <label for="message" data-key="message">zpráva:</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+
+        <!-- Honeypot input (skrytý, roboti ho vyplní) -->
+        <input
+          type="text"
+          id="honeypot"
+          name="honeypot"
+          style="display: none"
+        />
+
+        <!-- Google reCAPTCHA 
+            <div class="g-recaptcha" data-sitekey="6LflQfUqAAAAAHuzyq7V4_oIHP8KkLWQZyZRMY_o"></div>-->
+
+        <button type="submit" data-key="send">odeslat</button>
+      </form>
+      <h4>Nebo mi rovnou zavolejte:</h4>
+      <a href="tel: +420739414743" class="tel">739414743</a>
     </div>
   </body>
 </html>

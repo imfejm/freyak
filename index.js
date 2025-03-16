@@ -11,3 +11,19 @@ tlacitko.addEventListener("click", () => {
   const cara3 = document.querySelector("#cara3");
   cara3.classList.toggle("caraC");
 });
+
+//navigace
+document.addEventListener("DOMContentLoaded", function () {
+    const navLink = document.getElementById("nav-link");
+    const navText = document.getElementById("nav-text");
+    let firstClick = false;
+
+    navLink.addEventListener("click", function (event) {
+        if (!firstClick) {
+            event.preventDefault(); // Zabrání přesměrování
+            navText.style.display = "inline"; // Zobrazí text
+            firstClick = true;
+        }
+        // Při druhém kliknutí se odkaz normálně otevře
+    });
+});
