@@ -22,8 +22,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const lat = "50.3759308";
   const lon = "15.5746725";
 
-  // Odkaz na Google Maps navigaci pro mobilní zařízení
-  const googleMapsMobile = `google.maps://?daddr=${lat},${lon}`;
+  // Univerzální odkaz pro mobilní Google Maps
+  const googleMapsNav = `https://www.google.com/maps/dir/?api=1&destination=${lat},${lon}&travelmode=driving`;
 
   navLink.addEventListener("click", function (event) {
     if (!firstClick) {
@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
       navText.style.display = "inline"; // Zobrazí text
       firstClick = true;
       setTimeout(() => {
-        navLink.href = googleMapsMobile; // Otevře navigaci v Google Maps
+        window.location.href = googleMapsNav; // Otevře navigaci
       }, 10);
     }
   });
