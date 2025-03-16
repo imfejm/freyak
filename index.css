@@ -169,9 +169,10 @@ a.nav-link {
 
 .logo {
   position: absolute;
-  width: 9rem;
+  width: 10rem;
   border-radius: 0 0 50% 50%;
   top: 12%;
+  left: -3%;
 }
 @media (min-width: 768px) {
   .photo {
@@ -187,8 +188,21 @@ a.nav-link {
 
   .logo {
     width: 20rem;
+    height: 12rem;
     border-radius: 0 0 50% 50%;
     top: 1%;
+  }
+  .photo button {
+    position: absolute;
+    right: 0;
+    top: 1%;
+    z-index: 999;
+    width: 20rem;
+    height: 12rem;
+    border-radius: 0 0 50% 50%;
+    background: linear-gradient(to right, #bf958e, #c99d9a);
+    border-style: none;
+    font-size: 24px;
   }
 }
 /*uvod - sluzby*/
