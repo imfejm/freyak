@@ -18,10 +18,12 @@ document.addEventListener("DOMContentLoaded", function () {
   const navText = document.getElementById("nav-text");
   let firstClick = false;
 
-  // URL pro různé navigační aplikace
+  // GPS souřadnice pro adresu Holovousy 53
   const lat = "50.3759308";
   const lon = "15.5746725";
-  const googleMapsUrl = `https://www.google.com/maps/search/?api=1&query=${lat},${lon}`;
+
+  // Odkazy na různé navigace
+  const googleMapsUrl = `https://www.google.com/maps/dir/?api=1&destination=${lat},${lon}`;
   const geoUrl = `geo:${lat},${lon}`;
 
   navLink.addEventListener("click", function (event) {
@@ -30,14 +32,14 @@ document.addEventListener("DOMContentLoaded", function () {
       navText.style.display = "inline"; // Zobrazí text
       firstClick = true;
       setTimeout(() => {
-        // Nastavíme odkaz podle zařízení (Google Maps / ostatní navigace)
+        // Google Maps opravený odkaz
         if (
           navigator.userAgent.includes("Android") ||
           navigator.userAgent.includes("iPhone")
         ) {
-          navLink.href = geoUrl; // Otevře nativní navigaci
+          navLink.href = geoUrl; // Otevře nativní navigaci (Android, iOS)
         } else {
-          navLink.href = googleMapsUrl; // Otevře Google Maps
+          navLink.href = googleMapsUrl; // Otevře Google Maps s přesnou trasou
         }
       }, 10);
     }
