@@ -216,7 +216,6 @@ a.nav-link {
   padding: 2%;
   line-height: 1.6;
   font-weight: 400;
-
 }
 @media (min-width: 768px) {
   .intro p {
@@ -317,7 +316,7 @@ textarea {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 0 6% 4% 6%;
+  margin: 4% 6% 4% 6%;
   line-height: 1.6;
 }
 @media only screen and (min-width: 800px) {
@@ -325,13 +324,13 @@ textarea {
     width: 45vw;
   }
 }
-.see{
-    background-color: #c3b2d8;
-    padding: 2%;
-    margin-top: 3%;
-    box-shadow: 3px 10px 10px #c3b2d8;
+.see {
+  background-color: #c3b2d8;
+  padding: 2%;
+  margin: 4% 6% 4% 6%;
+  box-shadow: 3px 10px 10px #c3b2d8;
 }
 
-footer{
-    margin-top: 60px;
+footer {
+  margin-top: 60px;
 }
