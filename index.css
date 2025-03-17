@@ -17,7 +17,7 @@ body {
   width: 100vw; /* Zabrání roztažení */
   font-family: Genos;
   font-weight: 300;
-  font-size: 18px;
+  font-size: 20px;
 }
 
 .title {
@@ -213,6 +213,8 @@ a.nav-link {
 .intro p {
   margin: 4% 6% 4% 6%;
   padding: 2%;
+  max-width: 300px; /* Omezí šířku pro lepší vzhled */
+
   line-height: 1.6;
   font-weight: 400;
 }
@@ -342,7 +344,7 @@ textarea {
   display: flex;
   flex-direction: column;
   max-width: 300px; /* Omezí šířku pro lepší vzhled */
-  width: 80%;
+  width: 90%;
   grid-column: 1fr;
   align-items: center;
   justify-content: center;
@@ -351,6 +353,7 @@ textarea {
 @media only screen and (min-width: 800px) {
   .adresa {
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     margin: 0 10% 3% 3%;
   }
