@@ -229,7 +229,6 @@ a.nav-link {
   position: absolute;
   width: 10rem;
   border-radius: 0 0 50% 50%;
- 
 }
 
 @media (min-width: 768px) {
@@ -325,7 +324,7 @@ a.nav-link {
     flex-direction: column;
     justify-self: start;
   }
-  
+
   .forms {
     width: 40vw;
   }
@@ -363,10 +362,8 @@ textarea {
   text-decoration: none;
 }
 .call {
-  
 }
 .mail {
-  
 }
 .mailp {
   font-size: 26px;
@@ -417,7 +414,10 @@ textarea {
   margin-top: 60px;
   box-shadow: 3px 10px 10px #c3b2d8;
 }
-
+.dog {
+  width: 100%;
+  padding: 2%;
+}
 footer {
   grid-area: footer;
   margin-top: 60px;
