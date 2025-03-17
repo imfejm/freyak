@@ -86,7 +86,7 @@ h1 {
   flex-direction: column;
   justify-content: space-around;
   cursor: pointer;
-  margin-top: 2%;
+  margin-top: 3%;
   position: absolute;
   z-index: 9999;
   left: 83%;
@@ -331,6 +331,7 @@ a.nav-link {
   .forms input,
   textarea {
     width: 40vw;
+    height: 50px;
   }
 }
 .formular {
@@ -348,6 +349,13 @@ textarea {
   background-color: #f1e8e3dd;
   border-style: none;
   box-shadow: 0 2px 5px #ca9e9b;
+  height: 30px;
+  font-size: 18px;
+  padding: 1rem;
+}
+.forms textarea {
+  height: 120px; /* Větší výška pro textovou oblast */
+  resize: vertical; /* Umožní změnu velikosti jen vertikálně */
 }
 .forms button {
   background-color: #ca9e9b;
@@ -415,8 +423,9 @@ textarea {
   box-shadow: 3px 10px 10px #c3b2d8;
 }
 .dog {
-  width: 100%;
-  padding: 2%;
+  margin-top:4%;
+  width: 100%;  
+  box-shadow: 0px 5px 10px rgba(246, 246, 170, 0.645);
 }
 footer {
   grid-area: footer;
