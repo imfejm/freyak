@@ -167,7 +167,9 @@ a.nav-link {
 .hidden {
   display: none;
 }
-
+.cenik, .cenik2{
+  display: none;
+}
 /*uvodni fotka*/
 .cucu {
   display: none;
@@ -246,21 +248,22 @@ a.nav-link {
   justify-content: center;
   color: #442f23;
   width: 100%;
-  /*min-height: 100vh; /* Aby se přizpůsobilo výšce obrazovky */
+  min-height: 100vh; /* Aby se obsah centroval vertikálně */
 }
 .order h4 {
-  margin: 6%;
+  margin: 7%;
   padding: 2%;
   color: #442f23;
 }
 .forms {
-  max-width: 70vw; /* Nastaví maximální šířku formuláře */
-  width: 100%; /* Formulář se roztáhne podle dostupného prostoru */
+  width: 90%; /* Zajistí, že formulář se roztáhne na menších displejích */
+  max-width: 400px; /* Aby nebyl příliš široký na velkých mobilech */
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: center; /* Zarovná obsah formuláře na střed */
   justify-content: center;
   color: #442f23;
+  margin-left: 5%;
 }
 @media only screen and (min-width: 800px) {
   .order {
@@ -301,8 +304,9 @@ a.nav-link {
 
 .forms input,
 textarea {
+  max-width: 350px; /* Omezí šířku pro lepší vzhled */
   width: 100%; /* Zajistí, že vstupy budou stejně široké jako formulář */
-  max-width: 400px; /* Aby pole nebyla příliš široká na velkých mobilech */
+
   background-color: #f1e8e3dd;
   border-style: none;
   box-shadow: 0 2px 5px #ca9e9b;
@@ -326,8 +330,16 @@ textarea {
   margin: 2% 6% 0 6%;
 }
 .mailp {
-  margin: 0;
+ 
   font-size: 26px;
+}
+.zbytek {
+
+  margin: 0;
+  padding: 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /*salon - adresa*/
@@ -337,11 +349,12 @@ textarea {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  /* margin: 4% 6% 4% 6%;*/
   line-height: 1.6;
 }
+
 .adresa {
-  margin: 0 8% 3% 3%;
+margin: 0 5% 10% 10%;
+  margin-left: 10%;
 }
 @media only screen and (min-width: 800px) {
   .adresa {
@@ -356,7 +369,7 @@ textarea {
 
 /*Jana kontakt*/
 .see {
-  background-color: #c3b2d8;
+  background-color: #c3b2d8a7;
   padding: 2%;
   margin: 4% 6% 4% 6%;
   box-shadow: 3px 10px 10px #c3b2d8;
