@@ -23,11 +23,9 @@
 
       <div class="navigace small hidden" id="menu">
         <ul class="nav">
-          <a href="#" class="road" id="nav-link">
+          <a href="https://www.google.com/maps/dir/?api=1&destination=50.3759308,15.5746725&travelmode=driving" class="road" id="nav-link">
             <img src="img/navigation.png" alt="Navigovat" width="64px" />
-            <span id="nav-text" style="display: none; margin-left: 10px"
-              >do navigace</span
-            >
+            <span id="nav-text" style="margin-left: 10px">do navigace</span>
           </a>
 
           <li class="nav-item">
@@ -58,7 +56,6 @@
         class="logo"
       />
       <img src="img/background.jpg" alt="dog relax" class="cucu" />
-      <button>a href="#order">objednat se</button>
     </div>
 
     <div class="intro" id="sluzby">
@@ -71,53 +68,55 @@
     </div>
     <div class="interval" id="order"></div>
     <div class="order">
-      <div class="all">
+      <div class="formular">
         <h4>
           Napište mi, kdy byste chtěli s pejskem přijít, ozvu se Vám, zda je
           termín volný:
         </h4>
-      </div>
 
-      <form class="forms" id="contact-form">
-        <label for="name" data-key="name">vaše jméno:</label>
-        <input type="text" id="name" name="name" required />
+        <form class="forms" id="contact-form">
+          <label for="name" data-key="name">vaše jméno:</label>
+          <input type="text" id="name" name="name" required />
 
-        <label for="email" data-key="email">termín:</label>
-        <input type="email" id="email" name="reply_to" required />
+          <label for="email" data-key="email">termín:</label>
+          <input type="email" id="email" name="reply_to" required />
 
-        <label for="email" data-key="email"
-          >váš e-mail, kam mohu odepsat:</label
-        >
-        <input type="email" id="email" name="reply_to" required />
+          <label for="email" data-key="email"
+            >váš e-mail, kam mohu odepsat:</label
+          >
+          <input type="email" id="email" name="reply_to" required />
 
-        <label for="email" data-key="email">vaše telefonní číslo:</label>
-        <input type="email" id="email" name="reply_to" required />
+          <label for="email" data-key="email">vaše telefonní číslo:</label>
+          <input type="email" id="email" name="reply_to" required />
 
-        <label for="message" data-key="message">zpráva:</label>
-        <textarea id="message" name="message" rows="5" required></textarea>
+          <label for="message" data-key="message">zpráva:</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
 
-        <!-- Honeypot input (skrytý, roboti ho vyplní) -->
-        <input
-          type="text"
-          id="honeypot"
-          name="honeypot"
-          style="display: none"
-        />
+          <!-- Honeypot input (skrytý, roboti ho vyplní) -->
+          <input
+            type="text"
+            id="honeypot"
+            name="honeypot"
+            style="display: none"
+          />
 
-        <!-- Google reCAPTCHA 
+          <!-- Google reCAPTCHA 
             <div class="g-recaptcha" data-sitekey="6LflQfUqAAAAAHuzyq7V4_oIHP8KkLWQZyZRMY_o"></div>-->
 
-        <button type="submit" data-key="send">odeslat</button>
-      </form>
-      <h4 class="call">Nebo mi rovnou zavolejte:</h4>
-      <a href="tel: +420739414743" class="tel">739414743</a>
-      <h4 class="mail">Můžete použít e-mailovou adresu:</h4>
-      <p>info@freyak.cz</p>
+          <button type="submit" data-key="send">odeslat</button>
+        </form>
+      </div>
+      <div class="zbytek">
+        <h4 class="call">Nebo mi rovnou zavolejte:</h4>
+        <a href="tel: +420739414743" class="tel">739414743</a>
+        <h4 class="mail">Můžete použít e-mailovou adresu:</h4>
+        <p class="mailp">info@freyak.cz</p>
+      </div>
     </div>
     <div class="interval2" id="contact"></div>
     <div class="salon">
+      <p>Plně vybavený salon najdete na adrese:</p>
       <div class="adresa">
-        <p>Plně vybavený salon najdete na adrese:</p>
         <p>
           <strong>Holovousy 53</strong>, od Hořic v Podkrkonoší přibližně 5 km
           daleko. Vchod do salonu je z pravé strany domu, snadno ho najdete
@@ -125,6 +124,7 @@
           centrální parkoviště je pouhých 200 metrů na návsi u Obecního úřadu.
         </p>
         <iframe
+          class="mapa"
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2544.5198183480056!2d15.573017725719572!3d50.37550764275816!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470e9c03c572b11b%3A0xb09560d4040a3d9!2sHolovousy%2053%2C%20508%2001%20Holovousy!5e0!3m2!1scs!2scz!4v1742166749305!5m2!1scs!2scz"
           width="400"
           height="200"
@@ -133,15 +133,16 @@
           loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"
         ></iframe>
-        <div class="see">
-          <p>Těším se na Vás a Vaše psí společníky!</p>
-          <p><strong>Jana Kadečková</strong></p>
-          <p>IČO: 88798712</p>
-          <p>adresa: Holovousy 53, 508 01 Hořice v Podkrkonoší</p>
-          <p>e-mail: info@freyak.cz</p>
-          <p>telefon: 739 414 743</p>
-        </div>
       </div>
+      <div class="see">
+        <p>Těším se na Vás a Vaše psí společníky!</p>
+        <p><strong>Jana Kadečková</strong></p>
+        <p>IČO: 88798712</p>
+        <p>adresa: Holovousy 53, 508 01 Hořice v Podkrkonoší</p>
+        <p>e-mail: info@freyak.cz</p>
+        <p>telefon: 739 414 743</p>
+      </div>
+
       <footer>© imfejm.cz 2025</footer>
     </div>
     <script src="index.js"></script>

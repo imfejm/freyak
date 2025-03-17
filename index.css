@@ -4,6 +4,7 @@ html {
   box-sizing: border-box;
   overflow-x: hidden; /* Zakáže horizontální posuvník */
   width: 100vw; /* Zabrání roztažení */
+  scroll-behavior: smooth;
 }
 *,
 ::after,
@@ -179,6 +180,7 @@ a.nav-link {
   top: 12%;
   left: -3%;
 }
+
 @media (min-width: 768px) {
   .photo {
     background: linear-gradient(to right, #9d7a67, #ca9e9b);
@@ -197,7 +199,7 @@ a.nav-link {
     border-radius: 0 0 50% 50%;
     top: 1%;
   }
-  .photo button {
+  /*.visacka {
     position: absolute;
     right: 0;
     top: 1%;
@@ -208,7 +210,7 @@ a.nav-link {
     background: linear-gradient(to right, #bf958e, #c99d9a);
     border-style: none;
     font-size: 24px;
-  }
+  }*/
 }
 /*uvod - sluzby*/
 .intro p {
@@ -242,7 +244,7 @@ a.nav-link {
   color: #442f23;
 }
 .forms {
-  width: 50vw;
+  width: 70vw;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -250,24 +252,25 @@ a.nav-link {
   color: #442f23;
   font-style: bold;
 }
-/*@media only screen and (min-width: 800px) {
+@media only screen and (min-width: 800px) {
   .order {
     display: grid;
-    grid-template-areas: "all form";
-    grid-template-columns: 2fr 30vw;
+    grid-template-areas: "formular zbytek";
+    grid-template-columns: 2fr 1fr;
     gap: 3rem;
   }
-  .all {
-    grid-area: all;
+  .formular {
+    grid-area: formular;
     display: flex;
     flex-direction: column;
-    align-items: start;
+    align-items: center;
     height: 100%;
-    margin: 0;
+    padding: 3%;
+    margin-left: 5%;
   }
-  .forms {
-    grid-area: form;
-    margin: 5%;
+  .zbytek {
+    grid-area: zbytek;
+    margin: 0;
     padding: 5%;
     display: flex;
     flex-direction: column;
@@ -277,12 +280,19 @@ a.nav-link {
   .tel {
     margin: 2%;
   }
-}*/
+  .forms {
+    width: 40vw;
+  }
+  .forms input,
+  textarea {
+    width: 40vw;
+  }
+}
 
 .forms input,
 textarea {
-  width: 80vw;
-  margin: 3%;
+  width: 70vw;
+  /*margin: 3%;*/
   background-color: #f1e8e3dd;
   border-style: none;
   box-shadow: 0 2px 5px #ca9e9b;
@@ -296,7 +306,7 @@ textarea {
 }
 
 .tel {
-  font-size: 32px;
+  font-size: 28px;
   text-decoration: none;
 }
 .call {
@@ -305,8 +315,9 @@ textarea {
 .mail {
   margin: 2% 6% 0 6%;
 }
-.mail p {
+.mailp {
   margin: 0;
+  font-size: 26px;
 }
 
 /*salon - adresa*/
@@ -316,14 +327,24 @@ textarea {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 4% 6% 4% 6%;
+  /* margin: 4% 6% 4% 6%;*/
   line-height: 1.6;
 }
+.adresa {
+  margin: 0 8% 3% 3%;
+}
 @media only screen and (min-width: 800px) {
+  .adresa {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 10% 3% 3%;
+  }
   .salon {
-    width: 45vw;
+    margin: 2% 10% 6% 6%;
   }
 }
+
+/*Jana kontakt*/
 .see {
   background-color: #c3b2d8;
   padding: 2%;
