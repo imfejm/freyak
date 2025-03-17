@@ -19,7 +19,21 @@ body {
   font-weight: 300;
   font-size: 20px;
 }
-
+a:visited {
+  color: purple; /* Když už jsi odkaz navštívil/a */
+}
+a:active {
+  color: purple !important;
+}
+a:focus {
+  color: purple; /* Když je odkaz aktivní (po kliknutí nebo tabulátoru) */
+}
+a[href^="tel:"] {
+  color: purple !important;
+}
+a[target="_blank"] {
+  color: purple !important;
+}
 .title {
   position: fixed;
   top: 0;
@@ -169,11 +183,36 @@ a.nav-link {
 .cenik2 {
   display: none;
 }
+
+.container {
+  display: grid;
+  grid-template-areas:
+    "photo"
+    "intro"
+    "interval"
+    "order"
+    "interval2"
+    "address"
+    "see"
+    "footer";
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto 60px auto 60px auto auto auto;
+  padding-top: 60px;
+  align-items: center;
+  justify-items: center;
+}
+@media only screen and (min-width: 800px) {
+  .container {
+    grid-template-rows: 80vh /*2fr*/ 10px auto 60px auto 60px auto;
+  }
+}
+
 /*uvodni fotka*/
 .cucu {
   display: none;
 }
 .photo {
+  grid-area: photo;
   min-width: 100vw;
   min-height: 25rem;
   background-image: url("img/background.jpg");
@@ -186,8 +225,7 @@ a.nav-link {
   position: absolute;
   width: 10rem;
   border-radius: 0 0 50% 50%;
-  top: 12%;
-  left: -3%;
+ 
 }
 
 @media (min-width: 768px) {
@@ -211,10 +249,9 @@ a.nav-link {
 }
 /*uvod - sluzby*/
 .intro p {
-  margin: 4% 6% 4% 6%;
-  padding: 2%;
-  max-width: 300px; /* Omezí šířku pro lepší vzhled */
-
+  grid-area: intro;
+  padding: 3% 10% 3% 10%;
+  width: 100vw;
   line-height: 1.6;
   font-weight: 400;
 }
@@ -223,6 +260,12 @@ a.nav-link {
     margin: 2% 10% 2% 10%;
   }
 }
+.interval {
+  grid-area: interval;
+}
+.interval2 {
+  grid-area: interval2;
+}
 .interval,
 .interval2 {
   display: block;
@@ -230,6 +273,7 @@ a.nav-link {
 }
 /*kontaktni formular*/
 .order {
+  grid-area: order;
   display: flex;
   flex-direction: column;
   background-color: #9e9762;
@@ -240,19 +284,18 @@ a.nav-link {
   min-height: 100vh; /* Aby se obsah centroval vertikálně */
 }
 .order h4 {
-  margin: 7%;
-  padding: 2%;
+  padding: 3% 10% 3% 10%;
   color: #442f23;
 }
 .forms {
-  width: 90%; /* Zajistí, že formulář se roztáhne na menších displejích */
+  width: 100%; /* Zajistí, že formulář se roztáhne na menších displejích */
   max-width: 400px; /* Aby nebyl příliš široký na velkých mobilech */
   display: flex;
   flex-direction: column;
   align-items: center; /* Zarovná obsah formuláře na střed */
   justify-content: center;
   color: #442f23;
-  margin-left: 5%;
+  padding: 3% 10% 3% 10%;
   font-weight: 400;
 }
 @media only screen and (min-width: 800px) {
@@ -267,17 +310,16 @@ a.nav-link {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     height: 100%;
-    padding: 3%;
-    margin-left: 5%;
   }
   .zbytek {
     grid-area: zbytek;
     margin: 0;
-    padding: 5%;
+    /*padding: 3% 10% 3% 10%;*/
     display: flex;
     flex-direction: column;
-    align-items: center;
+    justify-self: start;
   }
   .order h4,
   .tel {
@@ -291,12 +333,18 @@ a.nav-link {
     width: 40vw;
   }
 }
-
+.formular {
+  grid-area: formular;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
 .forms input,
 textarea {
   max-width: 350px; /* Omezí šířku pro lepší vzhled */
   width: 100%; /* Zajistí, že vstupy budou stejně široké jako formulář */
-
   background-color: #f1e8e3dd;
   border-style: none;
   box-shadow: 0 2px 5px #ca9e9b;
@@ -321,6 +369,7 @@ textarea {
 }
 .mailp {
   font-size: 26px;
+  font-weight: 400;
 }
 .zbytek {
   margin: 0;
@@ -328,27 +377,24 @@ textarea {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
 
 /*salon - adresa*/
 
-.salon {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  line-height: 1.6;
+.salon p {
+  margin: 0;
+  padding: 0% 10% 0 10%;
 }
 
-.adresa {
-  display: flex;
-  flex-direction: column;
-  max-width: 300px; /* Omezí šířku pro lepší vzhled */
-  width: 90%;
-  grid-column: 1fr;
-  align-items: center;
-  justify-content: center;
-  margin: 5%;
+.adresa p {
+  grid-area: address;
+  padding: 3% 10% 3% 10%;
+  width: 100vw;
+  line-height: 1.6;
+}
+.mapa {
+  padding: 3% 10% 3% 10%;
 }
 @media only screen and (min-width: 800px) {
   .adresa {
@@ -364,12 +410,14 @@ textarea {
 
 /*Jana kontakt*/
 .see {
+  grid-area: see;
   background-color: #c3b2d8a7;
-  padding: 2%;
+  padding: 3% 10% 3% 10%;
   margin: 4% 6% 4% 6%;
   box-shadow: 3px 10px 10px #c3b2d8;
 }
 
 footer {
+  grid-area: footer;
   margin-top: 60px;
 }
