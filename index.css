@@ -237,18 +237,25 @@ a.nav-link {
   width: 10rem;
   border-radius: 0 0 50% 50%;
 }
+.odkazy {
+  display: none;
+}
 
 @media (min-width: 768px) {
   .photo {
+    grid-template-areas: "cucu odkazy";
+    grid-template-columns: 6fr 1fr;
     background: linear-gradient(to right, #9d7a67, #ca9e9b);
   }
   .cucu {
+    grid-area: cucu;
     position: relative;
     display: inherit;
     width: 80vw;
     max-height: 90vh;
-    margin-top: 4%;
-    left: 5%;
+    margin-top: 4% 0 0 5%;
+
+    padding: 0;
   }
   .logo {
     position: absolute;
@@ -257,6 +264,14 @@ a.nav-link {
     height: 12rem;
     border-radius: 0 0 50% 50%;
     top: 7.5rem;
+  }
+  .odkazy {
+    grid-area: odkazy;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-self: center;
+    padding: 0;
   }
 }
 /*uvod - sluzby*/
@@ -323,14 +338,14 @@ a.nav-link {
   height: 100%;
 }
 .forms label {
-  margin-top: 10px; /* Mezera nad popisky */
+  margin-top: 13px; /* Mezera nad popisky */
   display: block; /* Každý popisek na nový řádek */
+  padding-bottom: 5px;
   margin: 0 auto;
 }
 
 .forms input,
 textarea {
-  max-width: 350px; /* Omezí šířku pro lepší vzhled */
   width: 100%; /* Zajistí, že vstupy budou stejně široké jako formulář */
   background-color: #f1e8e3dd;
   border-style: none;
@@ -352,11 +367,52 @@ textarea {
   border-radius: 50%;
   margin: 0 auto;
 }
+.zbytek {
+  margin: 0;
+  padding: 10%;
+  display: block;
+  margin: 0 auto;
+}
+@keyframes shakeRotate {
+  0%,
+  100% {
+    transform: translateX(0) rotate(0deg);
+  } /* Normální stav */
+  10%,
+  30%,
+  50% {
+    transform: translateX(-3px) rotate(-20deg);
+  } /* Pohyb doleva a otočení doleva */
+  20%,
+  40% {
+    transform: translateX(3px) rotate(20deg);
+  } /* Pohyb doprava a otočení doprava */
+  80% {
+    transform: translateX(0) rotate(0deg);
+  } /* Zastavení */
+}
+
+.phanimace {
+  width: 32px;
+  margin-right: 5%;
+  animation: shakeRotate 4s ease-in-out infinite;
+}
+
+.tel {
+  font-size: 28px;
+  text-decoration: none;
+}
+
+.mailp {
+  font-size: 26px;
+  font-weight: 400;
+}
+
 @media only screen and (min-width: 800px) {
   .order {
     display: grid;
     grid-template-areas: "formular zbytek";
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 1.5fr 1fr;
     gap: 3rem;
   }
   .formular {
@@ -369,7 +425,7 @@ textarea {
   }
   .zbytek {
     grid-area: zbytek;
-    padding: 3% 2rem 3% 8rem;
+    padding: 3% 5rem 3% 1rem;
     display: flex;
     flex-direction: column;
     justify-self: start;
@@ -383,7 +439,7 @@ textarea {
     margin: 0;
   }
   .forms {
-    width: 100%;
+    width: 90%;
     padding: 1% 0 3% 8rem;
   }
   .forms input,
@@ -399,22 +455,6 @@ textarea {
     height: 120px; /* Větší výška pro textovou oblast */
     resize: vertical; /* Umožní změnu velikosti jen vertikálně */
   }
-}
-
-.tel {
-  font-size: 28px;
-  text-decoration: none;
-}
-
-.mailp {
-  font-size: 26px;
-  font-weight: 400;
-}
-.zbytek {
-  margin: 0;
-  padding: 10%;
-  display: block;
-  margin: 0 auto;
 }
 
 /*salon - adresa*/
@@ -451,7 +491,6 @@ textarea {
   .mapa {
     grid-area: mapa;
     width: 100%;
-    padding: 10%;
     margin-right: 5%;
     align-self: center;
   }
@@ -460,7 +499,7 @@ textarea {
     grid-template-areas: "adresa mapa";
     grid-template-columns: 60vw auto;
     padding: 0;
-    margin-bottom: 2rem;
+    margin-bottom: 4rem;
   }
 }
 
