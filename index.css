@@ -211,7 +211,10 @@ a.nav-link {
 }
 @media only screen and (min-width: 800px) {
   .container {
-    grid-template-rows: 60vh auto 60px auto 60px auto auto auto;
+    grid-template-rows: 60vh 50vh 60px auto 60px auto auto auto;
+  }
+  body {
+    font-size: 22px;
   }
 }
 
@@ -266,7 +269,10 @@ a.nav-link {
 }
 @media (min-width: 768px) {
   .intro p {
-    margin: 2% 10% 2% 10%;
+    /* margin: 2% 10% 2% 10%;*/
+    padding: 10% 10rem 0 8rem;
+    line-height: 2;
+    font-size: 22px;
   }
 }
 .interval {
@@ -292,78 +298,36 @@ a.nav-link {
   width: 100%;
   min-height: 100vh; /* Aby se obsah centroval vertikálně */
 }
-.order h4 {
-  padding: 3% 10% 3% 10%;
+.formular h4 {
+  padding: 3% 10% 0 10%;
   color: #442f23;
+}
+.formular p {
+  padding: 3% 10% 0 10%;
+  font-weight: 400;
 }
 .forms {
   width: 100%; /* Zajistí, že formulář se roztáhne na menších displejích */
-  max-width: 400px; /* Aby nebyl příliš široký na velkých mobilech */
-  display: flex;
-  flex-direction: column;
+  /*display: flex;
+  flex-direction: column;*/
   align-items: center; /* Zarovná obsah formuláře na střed */
   justify-content: center;
   color: #442f23;
   padding: 3% 10% 3% 10%;
   font-weight: 400;
 }
-@media only screen and (min-width: 800px) {
-  .order {
-    display: grid;
-    grid-template-areas: "formular zbytek";
-    grid-template-columns: 2fr 1fr;
-    gap: 3rem;
-  }
-  .formular {
-    grid-area: formular;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-  }
-  .zbytek {
-    grid-area: zbytek;
-    margin: 0;
-    /*padding: 3% 10% 3% 10%;*/
-    display: flex;
-    flex-direction: column;
-    justify-self: start;
-  }
-
-  .forms {
-    width: 100%;
-    max-width: 1000px;
-  }
-  .forms input,
-  textarea {
-   
-    height: 50px;
-    
-    width: 100%; /* Zajistí, že vstupy budou stejně široké jako formulář */
-    background-color: #f1e8e3dd;
-    border-style: none;
-    box-shadow: 0 2px 5px #ca9e9b;
-   
-    font-size: 18px;
-    padding: 1rem;
-  }
-  .forms textarea {
-    height: 120px; /* Větší výška pro textovou oblast */
-    resize: vertical; /* Umožní změnu velikosti jen vertikálně */
-  }
-}
 .formular {
   grid-area: formular;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  display: block;
+  margin: 0 auto;
   height: 100%;
 }
-.forms label {margin-top: 10px; /* Mezera nad popisky */
-  display: block; /* Každý popisek na nový řádek */}
-  
+.forms label {
+  margin-top: 10px; /* Mezera nad popisky */
+  display: block; /* Každý popisek na nový řádek */
+  margin: 0 auto;
+}
+
 .forms input,
 textarea {
   max-width: 350px; /* Omezí šířku pro lepší vzhled */
@@ -378,13 +342,63 @@ textarea {
 .forms textarea {
   height: 120px; /* Větší výška pro textovou oblast */
   resize: vertical; /* Umožní změnu velikosti jen vertikálně */
+  margin-bottom: 5%;
 }
 .forms button {
+  display: block;
   background-color: #ca9e9b;
   width: 4rem;
   aspect-ratio: 1/1;
   border-radius: 50%;
-  margin: 7% 0 7% 0;
+  margin: 0 auto;
+}
+@media only screen and (min-width: 800px) {
+  .order {
+    display: grid;
+    grid-template-areas: "formular zbytek";
+    grid-template-columns: 2fr 1fr;
+    gap: 3rem;
+  }
+  .formular {
+    grid-area: formular;
+    /* display: flex;
+    flex-direction: column;*/
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+  .zbytek {
+    grid-area: zbytek;
+    padding: 3% 2rem 3% 8rem;
+    display: flex;
+    flex-direction: column;
+    justify-self: start;
+  }
+  .formular h4 {
+    padding: 3% 2rem 3% 8rem;
+  }
+  .formular p {
+    width: 100%;
+    padding: 1% 2rem 3% 8rem;
+    margin: 0;
+  }
+  .forms {
+    width: 100%;
+    padding: 1% 0 3% 8rem;
+  }
+  .forms input,
+  textarea {
+    height: 50px;
+    width: 100%; /* Zajistí, že vstupy budou stejně široké jako formulář */
+    background-color: #f1e8e3dd;
+    border-style: none;
+    box-shadow: 0 2px 5px #ca9e9b;
+    font-size: 18px;
+  }
+  .forms textarea {
+    height: 120px; /* Větší výška pro textovou oblast */
+    resize: vertical; /* Umožní změnu velikosti jen vertikálně */
+  }
 }
 
 .tel {
@@ -398,14 +412,15 @@ textarea {
 }
 .zbytek {
   margin: 0;
-  padding: 5%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  padding: 10%;
+  display: block;
+  margin: 0 auto;
 }
 
 /*salon - adresa*/
+.salon {
+  grid-area: address;
+}
 
 .salon p {
   margin: 0;
@@ -413,7 +428,6 @@ textarea {
 }
 
 .adresa p {
-  grid-area: address;
   padding: 3% 10% 3% 10%;
   width: 100vw;
   line-height: 1.6;
@@ -422,20 +436,38 @@ textarea {
   padding: 3% 10% 3% 10%;
 }
 @media only screen and (min-width: 800px) {
-  .adresa {
+  /*.mapa{display:none}*/
+  .adresa p {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin: 0 10% 3% 3%;
+    flex-direction: column;
+    margin: 0;
+    padding: 1%;
+    width: 100%;
+  }
+  .adresa {
+    grid-area: adresa;
+    padding: 3%;
+  }
+  .mapa {
+    grid-area: mapa;
+    width: 100%;
+    padding: 10%;
+    margin-right: 5%;
+    align-self: center;
   }
   .salon {
-    margin: 2% 10% 6% 6%;
+    display: grid;
+    grid-template-areas: "adresa mapa";
+    grid-template-columns: 60vw auto;
+    padding: 0;
+    margin-bottom: 2rem;
   }
 }
 
 /*Jana kontakt*/
 .see {
   grid-area: see;
+  display: block;
   background-color: #c3b2d8a7;
   padding: 3% 10% 3% 10%;
   margin-top: 60px;
@@ -446,8 +478,33 @@ textarea {
   width: 100%;
   box-shadow: 0px 5px 10px rgba(246, 246, 170, 0.645);
 }
-@media only screen and (min-width: 800px) {.see{display:none;}
-.dog{width:100%}
+@media only screen and (max-width: 800px) {
+  .seeV {
+    display: none;
+  }
+}
+@media only screen and (min-width: 800px) {
+  .see {
+    display: none;
+  }
+  .seeV {
+    position: relative;
+  }
+  .dogV {
+    width: 100vw;
+    height: 70vh;
+    object-fit: cover; /* Zachová poměr stran a vyřízne přebytek */
+  }
+  .seetext {
+    background-color: #c3b2d879;
+    width: fit-content;
+    height: 70vh;
+    padding: 2rem;
+    position: absolute;
+    bottom: 1.4%;
+    left: 65%;
+    padding-top: 5%;
+  }
 }
 
 footer {
