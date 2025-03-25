@@ -16,9 +16,7 @@
     <div class="title">
       <h1>Freyak psí salon</h1>
       <div class="full">
-        <a href="">služby</a>
-        <a href="" class="cenik">ceník</a>
-        <a href="#contact" data-key="contact">kontakt</a>
+        
       </div>
 
       <div class="navigace small hidden" id="menu">
@@ -68,15 +66,30 @@
         />
         <img src="img/background.jpg" alt="dog relax" class="cucu" />
         <div class="odkazy">
+          <a class="phoneup">
+            <img src="img/phone.png" alt="phone icon" width="30px" />
+            <span id="nav-text">zavolat</span>
+        </a>
+          
           <a href="#order" class="orderup">
             <img src="img/objednat.png" alt="form icon" width="30px" />
             <span id="nav-text">objednat se</span>
           </a>
 
-          <a href="tel: +420739414743" class="phoneup">
-            <img src="img/phone.png" alt="phone icon" width="30px" />
-            <span id="nav-text">zavolat</span>
+          <a href="#contact" data-key="contact" class="kon">
+            <img src="img/kontakt.png" alt="form icon" width="30px" />
+            <span>kontakt</span>
           </a>
+        
+        <!-- Vyskakovací okno -->
+        <div id="phoneModal" class="modal">
+            <div class="modal-content">
+                <p>Telefonní číslo: <strong id="phoneNumber">+420 739 414 743</strong></p>
+                <button id="copyPhone">Kopírovat</button>
+                <button id="closeModal">Zavřít</button>
+            </div>
+        </div>
+        </div>
         </div>
       </div>
 
