@@ -204,11 +204,11 @@ a.nav-link {
     "see"
     "footer";
   grid-template-columns: 1fr;
-  grid-template-rows: 70vh auto 60px auto 60px auto auto auto;
+  grid-template-rows: auto auto 60px auto 60px auto auto auto;
   padding-top: 60px;
   align-items: center;
   justify-items: center;
-  position:relative;
+  position: relative;
 }
 @media only screen and (min-width: 800px) {
   .container {
@@ -330,7 +330,7 @@ a.nav-link {
   width: 100vw;
   line-height: 1.6;
   font-weight: 400;
-  margin:0;
+  margin: 0;
 }
 @media (min-width: 768px) {
   .intro p {
@@ -372,8 +372,8 @@ a.nav-link {
   font-weight: 400;
 }
 .forms {
-  width: 100%; 
-  align-items: center; 
+  width: 100%;
+  align-items: center;
   justify-content: center;
   color: #442f23;
   padding: 3% 10% 3% 10%;
@@ -524,7 +524,6 @@ textarea {
   padding: 3% 10% 3% 10%;
 }
 @media only screen and (min-width: 800px) {
-
   .adresa p {
     display: flex;
     flex-direction: column;
@@ -615,4 +614,10 @@ footer {
 
 .full img {
   width: 50px;
+}
+
+#honeypot {
+  display: none;
+  position: absolute;
+  left: -9999px;
 }

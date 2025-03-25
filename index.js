@@ -107,3 +107,106 @@ document.addEventListener("DOMContentLoaded", function () {
       });
   });
 });
+
+//kontaktni formular:
+
+document.addEventListener("DOMContentLoaded", function () {
+  emailjs.init("SVmLKEhincDuKtRSg"); // Inicializace EmailJS
+
+  document
+    .getElementById("contact-form")
+    .addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      const phoneInput = document.getElementById("phoneNumber");
+
+      if (!phoneInput) {
+        console.error("❌ Element #phoneNumber neexistuje v HTML!");
+        return;
+      }
+
+      const phoneNumber = phoneInput.value.trim();
+      console.log("Telefonní číslo:", phoneNumber);
+
+      // Pokračování v odesílání EmailJS...
+    });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  emailjs.init("SVmLKEhincDuKtRSg"); // Inicializace EmailJS
+});
+
+document
+  .getElementById("contact-form")
+  .addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    const form = event.target;
+    const serviceID = "service_4wdj45h"; // Nahraď vlastním service_id
+    const templateID = "template_ptyg4ol"; // Nahraď vlastním template_id
+
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const message = document.getElementById("message").value.trim();
+    const date = document.getElementById("date").value.trim();
+    const phoneNumber = document.getElementById("phoneNumber").value.trim();
+    const honeypot = document.getElementById("honeypot").value; // Honeypot ochrana
+    const submitTime = new Date().getTime();
+
+    if (!form.dataset.startTime) {
+      form.dataset.startTime = submitTime;
+    }
+
+    const elapsedTime = submitTime - form.dataset.startTime;
+
+    // ✅ 1. Kontrola honeypot inputu (musí být prázdný)
+    if (honeypot !== "") {
+      alert("Spam detekován!");
+      return;
+    }
+
+    // ✅ 2. Kontrola příliš rychlého odeslání (méně než 2 sekundy)
+    if (elapsedTime < 2000) {
+      alert("Formulář byl odeslán příliš rychle. Zkuste to znovu.");
+      return;
+    }
+
+    // ✅ 3. Ověření obsahu zprávy (blokace spammových vzorů)
+    const spamPatterns = [
+      /http(s)?:\/\//i,
+      /viagra/i,
+      /free money/i,
+      /crypto/i,
+    ];
+    if (spamPatterns.some((pattern) => pattern.test(message))) {
+      alert("Zpráva obsahuje podezřelé prvky. Zkuste jiný text.");
+      return;
+    }
+
+    const templateParams = {
+      name: name,
+      reply_to: email,
+      message: message,
+      date: date,
+      phoneNumber: phoneNumber,
+    };
+
+    emailjs
+      .send(serviceID, templateID, templateParams)
+      .then((response) => {
+        alert("Zpráva byla úspěšně odeslána!");
+        form.reset();
+        form.dataset.startTime = ""; // Reset časovače
+      })
+      .catch((error) => {
+        alert("Chyba při odesílání: " + error.text);
+      });
+  });
+
+const phoneInput = document.getElementById("phoneNumber");
+
+if (phoneInput) {
+  const phoneNumber = phoneInput.value.trim();
+} else {
+  console.error("❌ Prvek #phoneNumber nebyl nalezen v HTML!");
+}
