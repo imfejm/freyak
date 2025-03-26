@@ -364,26 +364,30 @@ a.nav-link {
   min-height: 100vh; /* Aby se obsah centroval vertikálně */
 }
 .formular h4 {
-  padding: 3% 10% 0 10%;
+ /* padding: 3% 10% 0 10%;*/
   color: #442f23;
 }
+
 .formular p {
-  padding: 3% 10% 0 10%;
+  width: 100%;
   font-weight: 400;
+  margin-bottom: 5%;
 }
 .forms {
   width: 100%;
   align-items: center;
   justify-content: center;
   color: #442f23;
-  padding: 3% 10% 10% 10%;
   font-weight: 400;
 }
+
 .formular {
   grid-area: formular;
   display: block;
   margin: 0 auto;
   height: 100%;
+  padding: 3% 10% 10% 10%;
+  
 }
 .forms label {
   margin-top: 13px; /* Mezera nad popisky */
@@ -398,15 +402,17 @@ textarea {
   background-color: #f1e8e3dd;
   border-style: none;
   box-shadow: 0 2px 5px #ca9e9b;
-  height: 30px;
+  height: 50px;
   font-size: 18px;
   padding: 1rem;
 }
+
 .forms textarea {
   height: 120px; /* Větší výška pro textovou oblast */
   resize: vertical; /* Umožní změnu velikosti jen vertikálně */
   margin-bottom: 5%;
 }
+
 .forms button {
   display: block;
   background-color: #ca9e9b;
@@ -460,9 +466,6 @@ textarea {
   display: none;
 }
 
-.dogrun {
-  display: none;
-}
 
 @media only screen and (min-width: 800px) {
   .order {
@@ -517,31 +520,6 @@ textarea {
 }
 }
  
-  .formular h4 {
-    padding: 3% 2rem 1% 1rem;
-  }
-  .formular p {
-    width: 100%;
-    padding: 1% 2rem 3% 1rem;
-    margin: 0;
-  }
-  .forms {
-    width: 90%;
-    padding: 1% 0 3% 1rem;
-  }
-  .forms input,
-  textarea {
-    height: 50px;
-    width: 100%; /* Zajistí, že vstupy budou stejně široké jako formulář */
-    background-color: #f1e8e3dd;
-    border-style: none;
-    box-shadow: 0 2px 5px #ca9e9b;
-    font-size: 18px;
-  }
-  .forms textarea {
-    height: 120px; /* Větší výška pro textovou oblast */
-    resize: vertical; /* Umožní změnu velikosti jen vertikálně */
-  }
 
 
 /*salon - adresa*/
