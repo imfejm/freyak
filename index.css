@@ -592,6 +592,7 @@ textarea {
   }
   .seeV {
     position: relative;
+    box-shadow: 3px 5px 8px #c3b2d8;
   }
   .dogV {
     width: 100vw;

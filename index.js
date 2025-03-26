@@ -152,7 +152,7 @@ function showCustomAlert(message) {
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      background:rgb(204, 174, 172);
+      background:rgb(206, 190, 189);
       padding: 20px;
       border-radius: 10px;
       box-shadow: 0px 4px 6px rgb(150, 179, 84);
@@ -165,37 +165,3 @@ function showCustomAlert(message) {
   document.body.appendChild(alertBox);
 }
 
-// document.addEventListener("DOMContentLoaded", function () {
-//   emailjs.init("SVmLKEhincDuKtRSg"); // Tvůj Public Key z EmailJS
-
-//   document
-//     .getElementById("contact-form")
-//     .addEventListener("submit", function (event) {
-//       event.preventDefault(); // Zabrání výchozímu odeslání formuláře
-
-//       const form = event.target;
-//       const honeypot = form.honeypot.value;
-
-//       // Kontrola honeypotu (pokud je vyplněný, zastavíme odesílání)
-//       if (honeypot) {
-//         console.warn("Spam bot detekován!");
-//         return;
-//       }
-
-//       // Odesílání přes EmailJS
-//       emailjs
-//         .sendForm("service_4wdj45h", "template_ptyg4ol", form)
-//         .then(() => {
-//           alert(
-//             "Zpráva byla úspěšně odeslána! Prosím vyčkejte na potvrzení termínu."
-//           );
-//           form.reset(); // Vymazání formuláře
-//         })
-//         .catch((error) => {
-//           console.error("Chyba při odesílání:", error);
-//           alert(
-//             "Omlouváme se, zprávu se nepodařilo odeslat. Zkuste to prosím znovu."
-//           );
-//         });
-//     });
-// });
