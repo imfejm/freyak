@@ -42,28 +42,29 @@ document.addEventListener("DOMContentLoaded", function () {
     if (window.scrollY >= threshold && !added) {
       added = true;
 
-      // Přidání odkazů
-      fullDiv.innerHTML += `
-              <a class="phonefix">
-            <img src="img/phone.png" alt="phone icon" width="30px" />
-            <span id="nav-text">zavolat</span>
+      // Přidání všech odkazů najednou
+      fullDiv.innerHTML = `
+      
+        <a class="phonefix">
+          <img src="img/phone.png" alt="phone icon" width="30px" />
+          <span id="nav-text">zavolat</span>
         </a>
-              <a href="#order" class="ordertext">
-                  <img src="img/objednat.png" alt="form icon" width="50px" />
-                  <span>objednat se</span>
-              </a>
-             
-              
-          `;
+        <a href="#order" class="ordertext">
+          <img src="img/objednat.png" alt="form icon" width="50px" />
+          <span>objednat se</span>
+        </a>
+          <a href="#contact" data-key="contact">
+          <img src="img/kontakt.png" alt="form icon" width="30px" class="konup" />
+          <span>kontakt</span>
+        </a>
+      `;
 
       fullDiv.classList.add("visible"); // Přidání třídy pro zobrazení
     } else if (window.scrollY < threshold && added) {
       added = false;
 
-      // Odebrání přidaných odkazů
-      fullDiv.innerHTML = `<a href="#contact" data-key="contact">
-      <img src="img/kontakt.png" alt="form icon" width="30px" class="konup" />
-            <span>kontakt</span></a>`;
+      // Odebrání všech odkazů
+      fullDiv.innerHTML = "";
       fullDiv.classList.remove("visible");
     }
   });
@@ -164,4 +165,3 @@ function showCustomAlert(message) {
 
   document.body.appendChild(alertBox);
 }
-
