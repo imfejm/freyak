@@ -113,36 +113,27 @@
           <p>Prosím vyčkejte tedy na závazné potvrzení.</p>
 
           <form class="forms" id="contact-form">
-            <label for="name">vaše jméno:</label>
+            <label for="name">Vaše jméno:</label>
             <input type="text" id="name" name="name" required />
-
-            <label for="date" >termín (datum a čas):</label>
-            <input  id="date" name="date"  required />
-
-            <label for="email" data-key="email"
-              >váš e-mail, kam mohu odepsat:</label
-            >
+        
+            <label for="date">Termín (datum a čas):</label>
+            <input type="datetime-local" id="date" name="date" required />
+        
+            <label for="email">Váš e-mail, kam mohu odepsat:</label>
             <input type="email" id="email" name="reply_to" required />
-
-            <label for="phoneNumber" >vaše telefonní číslo:</label>
-            <input type="text" id="phoneNumber" name="phoneNumber" required />
-
-            <label for="message" data-key="message">zpráva:</label>
+        
+            <label for="phoneNumber">Vaše telefonní číslo:</label>
+            <input type="tel" id="phoneNumber" name="phoneNumber" pattern="[+0-9]{9,15}" required />
+        
+            <label for="message">Zpráva:</label>
             <textarea id="message" name="message" rows="5" required></textarea>
-
+        
             <!-- Honeypot input (skrytý, roboti ho vyplní) -->
-            <input
-              type="text"
-              id="honeypot"
-              name="honeypot"
-              style="display: none"
-            />
-
-            <!-- Google reCAPTCHA 
-            <div class="g-recaptcha" data-sitekey="6LflQfUqAAAAAHuzyq7V4_oIHP8KkLWQZyZRMY_o"></div>-->
-
-            <button type="submit" data-key="send">odeslat</button>
-          </form>
+            <input type="text" id="honeypot" name="honeypot" style="display: none" aria-hidden="true" />
+        
+            <button type="submit">Odeslat</button>
+        </form>
+        
         </div>
         <div class="zbytek">
           <h4 class="call">
@@ -213,7 +204,7 @@
         </p>
       </footer>
     </div>
-    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script src="index.js"></script>
   </body>
 </html>

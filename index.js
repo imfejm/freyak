@@ -111,102 +111,91 @@ document.addEventListener("DOMContentLoaded", function () {
 //kontaktni formular:
 
 document.addEventListener("DOMContentLoaded", function () {
-  emailjs.init("SVmLKEhincDuKtRSg"); // Inicializace EmailJS
+  emailjs.init("SVmLKEhincDuKtRSg");
 
   document
     .getElementById("contact-form")
     .addEventListener("submit", function (event) {
       event.preventDefault();
 
-      const phoneInput = document.getElementById("phoneNumber");
+      const form = event.target;
+      const honeypot = form.honeypot.value;
 
-      if (!phoneInput) {
-        console.error("❌ Element #phoneNumber neexistuje v HTML!");
+      if (honeypot) {
+        console.warn("Spam bot detekován!");
         return;
       }
 
-      const phoneNumber = phoneInput.value.trim();
-      console.log("Telefonní číslo:", phoneNumber);
-
-      // Pokračování v odesílání EmailJS...
+      emailjs
+        .sendForm("service_4wdj45h", "template_ptyg4ol", form)
+        .then(() => {
+          showCustomAlert(
+            "Zpráva byla úspěšně odeslána! Prosím vyčkejte na potvrzení termínu."
+          );
+          form.reset();
+        })
+        .catch((error) => {
+          console.error("Chyba při odesílání:", error);
+          showCustomAlert(
+            "Omlouváme se, zprávu se nepodařilo odeslat. Zkuste to prosím znovu."
+          );
+        });
     });
 });
 
-document.addEventListener("DOMContentLoaded", function () {
-  emailjs.init("SVmLKEhincDuKtRSg"); // Inicializace EmailJS
-});
+// Funkce pro zobrazení vlastního alertu
+function showCustomAlert(message) {
+  const alertBox = document.createElement("div");
+  alertBox.innerHTML = `<p>${message}</p><button onclick="this.parentElement.remove()">OK</button>`;
+  alertBox.style.cssText = `
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background:rgb(204, 174, 172);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0px 4px 6px rgb(150, 179, 84);
+      text-align: center;
+      font-size: 24px;
+      max-width: 80%;
+      z-index: 1000;
+  `;
 
-document
-  .getElementById("contact-form")
-  .addEventListener("submit", function (event) {
-    event.preventDefault();
-
-    const form = event.target;
-    const serviceID = "service_4wdj45h"; // Nahraď vlastním service_id
-    const templateID = "template_ptyg4ol"; // Nahraď vlastním template_id
-
-    const name = document.getElementById("name").value.trim();
-    const email = document.getElementById("email").value.trim();
-    const message = document.getElementById("message").value.trim();
-    const date = document.getElementById("date").value.trim();
-    const phoneNumber = document.getElementById("phoneNumber").value.trim();
-    const honeypot = document.getElementById("honeypot").value; // Honeypot ochrana
-    const submitTime = new Date().getTime();
-
-    if (!form.dataset.startTime) {
-      form.dataset.startTime = submitTime;
-    }
-
-    const elapsedTime = submitTime - form.dataset.startTime;
-
-    // ✅ 1. Kontrola honeypot inputu (musí být prázdný)
-    if (honeypot !== "") {
-      alert("Spam detekován!");
-      return;
-    }
-
-    // ✅ 2. Kontrola příliš rychlého odeslání (méně než 2 sekundy)
-    if (elapsedTime < 2000) {
-      alert("Formulář byl odeslán příliš rychle. Zkuste to znovu.");
-      return;
-    }
-
-    // ✅ 3. Ověření obsahu zprávy (blokace spammových vzorů)
-    const spamPatterns = [
-      /http(s)?:\/\//i,
-      /viagra/i,
-      /free money/i,
-      /crypto/i,
-    ];
-    if (spamPatterns.some((pattern) => pattern.test(message))) {
-      alert("Zpráva obsahuje podezřelé prvky. Zkuste jiný text.");
-      return;
-    }
-
-    const templateParams = {
-      name: name,
-      reply_to: email,
-      message: message,
-      date: date,
-      phoneNumber: phoneNumber,
-    };
-
-    emailjs
-      .send(serviceID, templateID, templateParams)
-      .then((response) => {
-        alert("Zpráva byla úspěšně odeslána!");
-        form.reset();
-        form.dataset.startTime = ""; // Reset časovače
-      })
-      .catch((error) => {
-        alert("Chyba při odesílání: " + error.text);
-      });
-  });
-
-const phoneInput = document.getElementById("phoneNumber");
-
-if (phoneInput) {
-  const phoneNumber = phoneInput.value.trim();
-} else {
-  console.error("❌ Prvek #phoneNumber nebyl nalezen v HTML!");
+  document.body.appendChild(alertBox);
 }
+
+// document.addEventListener("DOMContentLoaded", function () {
+//   emailjs.init("SVmLKEhincDuKtRSg"); // Tvůj Public Key z EmailJS
+
+//   document
+//     .getElementById("contact-form")
+//     .addEventListener("submit", function (event) {
+//       event.preventDefault(); // Zabrání výchozímu odeslání formuláře
+
+//       const form = event.target;
+//       const honeypot = form.honeypot.value;
+
+//       // Kontrola honeypotu (pokud je vyplněný, zastavíme odesílání)
+//       if (honeypot) {
+//         console.warn("Spam bot detekován!");
+//         return;
+//       }
+
+//       // Odesílání přes EmailJS
+//       emailjs
+//         .sendForm("service_4wdj45h", "template_ptyg4ol", form)
+//         .then(() => {
+//           alert(
+//             "Zpráva byla úspěšně odeslána! Prosím vyčkejte na potvrzení termínu."
+//           );
+//           form.reset(); // Vymazání formuláře
+//         })
+//         .catch((error) => {
+//           console.error("Chyba při odesílání:", error);
+//           alert(
+//             "Omlouváme se, zprávu se nepodařilo odeslat. Zkuste to prosím znovu."
+//           );
+//         });
+//     });
+// });
