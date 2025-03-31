@@ -411,7 +411,10 @@ textarea {
   resize: vertical; /* Umožní změnu velikosti jen vertikálně */
   margin-bottom: 5%;
 }
-
+.g-recaptcha {
+  display: block;
+  margin: 3% auto;
+}
 .forms button {
   display: block;
   background-color: #ca9e9b;
@@ -654,7 +657,7 @@ footer {
   }
   .forms input,
   textarea {
-    background-color: #ccc4d690;
+    background-color: #eed4d3d1;
   }
   .see {
     color: #362f2e;
