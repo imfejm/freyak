@@ -639,3 +639,15 @@ footer {
   position: absolute;
   left: -9999px;
 }
+
+@media (prefers-color-scheme: dark) {
+  body{
+    background-color: #362a29;
+  }
+  .order {
+    background-color: #2c360f;
+  }
+  .forms input,
+textarea {background-color: #9d7a67}
+
+}
