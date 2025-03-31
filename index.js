@@ -165,3 +165,12 @@ function showCustomAlert(message) {
 
   document.body.appendChild(alertBox);
 }
+
+//recaptcha
+document.getElementById("contact-form").addEventListener("submit", function (event) {
+  var recaptchaResponse = grecaptcha.getResponse();
+  if (!recaptchaResponse) {
+      event.preventDefault(); // Zastaví odeslání formuláře
+      alert("Prosím potvrďte, že nejste robot.");
+  }
+});
