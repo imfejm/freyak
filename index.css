@@ -52,7 +52,14 @@ a[href*="maps.google.com"] {
   align-items: center; /* Zarovná obsah vertikálně */
   justify-content: space-between;
   padding-top: 0.5%;
+  max-width: 1300px; /* Nastaví maximální šířku webu */
 }
+@media only screen and (min-width: 1300px) {
+  .title {
+    margin: 0 auto; /* Centrovaní na střed */
+  }
+}
+
 h1 {
   margin-left: 3%;
   font-size: 35px;
@@ -209,6 +216,12 @@ a.nav-link {
   align-items: center;
   justify-items: center;
   position: relative;
+  max-width: 1300px; /* Nastaví maximální šířku webu */
+}
+@media only screen and (min-width: 1300px) {
+  .container {
+    margin: 0 auto; /* Centrovaní na střed */
+  }
 }
 @media only screen and (min-width: 800px) {
   .container {
@@ -649,6 +662,7 @@ footer {
   .title {
     background: linear-gradient(to right, #9d7a67, #ca9e9b);
   }
+
   h1 {
     color: #362f2e;
   }
